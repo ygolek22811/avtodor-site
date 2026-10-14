@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Oswald', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-brand-black: #0A0B0D;
+  --color-brand-graphite: #151719;
+  --color-brand-card: #141618;
+  --color-brand-surface: #1B1E22;
+  --color-brand-border: #262A30;
+  --color-brand-orange: #FF5A1F;
+  --color-brand-orange-hover: #E64C12;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: #0A0B0D;
+    color: #E6E8EB;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+}
+
+/* Custom focus ring for high accessibility */
+*:focus-visible {
+  outline: 2px solid #FF5A1F;
+  outline-offset: 2px;
+}
+
+/* Micro-interaction transitions (180-250ms) */
+.transition-micro {
+  transition-property: color, background-color, border-color, transform, opacity, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Arrow nudge on hover */
+.arrow-nudge {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .arrow-nudge {
+  transform: translateX(4px);
+}
+
+/* Card subtle lift & border illumination */
+.card-hover-subtle {
+  transition: border-color 220ms ease, background-color 220ms ease, transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-subtle:hover {
+  transform: translateY(-2px);
+}
+
+/* Controlled image hover enhancement (subtle scale & light) */
+.img-editorial {
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), filter 300ms ease;
+  will-change: transform;
+}
+
+.img-editorial:hover {
+  transform: scale(1.025);
+  filter: brightness(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover-subtle:hover {
+    transform: none !important;
+  }
+  .arrow-nudge,
+  .group:hover .arrow-nudge {
+    transform: none !important;
+  }
+  .img-editorial,
+  .img-editorial:hover {
+    transform: none !important;
+    filter: none !important;
+  }
+}
