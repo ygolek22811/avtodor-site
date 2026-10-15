@@ -31,15 +31,15 @@ export const FAQSection: React.FC = () => {
             <ScrollReveal>
               <div className="flex items-center gap-3 text-xs uppercase tracking-widest font-semibold text-[#FF5A1F] mb-3">
                 <span className="w-5 h-[2px] bg-[#FF5A1F]" />
-                <span>Вопросы и ответы</span>
+                <span>Вопросы родителей</span>
               </div>
 
               <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white font-display uppercase leading-tight mb-6">
-                ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
+                ВОПРОСЫ РОДИТЕЛЕЙ
               </h2>
 
               <p className="text-base sm:text-lg text-neutral-300 leading-relaxed mb-8">
-                Собрали ответы на главные вопросы родителей перед началом тренировок: от возраста зачисления и экипировки до игрового процесса и философии клуба.
+                Всё, что важно знать перед началом занятий: собрали ответы на главные вопросы об экипировке, пробной тренировке, группах и адаптации детей.
               </p>
 
               {/* Minimalist Graphite Support Card */}

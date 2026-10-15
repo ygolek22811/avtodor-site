@@ -235,7 +235,7 @@ export const ContactsSection: React.FC<ContactsSectionProps> = ({
                   СМОЛЕНСК, РОССИЯ
                 </h3>
                 <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed mb-6">
-                  Детский спортивный клуб «Автодор» базируется в Смоленске.
+                  Детский спортивный клуб «Автодор» базируется в Смоленске.{' '}
                   {CLUB_CONTACTS.addressNote}
                 </p>
 
