@@ -59,6 +59,22 @@ export interface FAQItem {
   category?: string;
 }
 
+export interface SponsorBenefit {
+  id: string;
+  title: string;
+  description: string;
+  iconName?: 'globe' | 'shirt' | 'media';
+}
+
+export interface SponsorshipInfo {
+  badge: string;
+  title: string;
+  description: string;
+  benefits: SponsorBenefit[];
+  ctaText: string;
+  ctaTargetId: string;
+}
+
 export interface PartnerClub {
   id: string;
   name: string;
@@ -74,6 +90,25 @@ export interface CooperationSectionData {
   subtitle: string;
   clubs: PartnerClub[];
 }
+
+export interface NavLinkItem {
+  label: string;
+  href: string;
+}
+
+/**
+ * НАВИГАЦИОННЫЕ ССЫЛКИ САЙТА
+ */
+export const NAV_LINKS: NavLinkItem[] = [
+  { label: 'Сотрудничество', href: '#cooperation' },
+  { label: 'Философия', href: '#philosophy' },
+  { label: 'Команды', href: '#teams' },
+  { label: 'Тренеры', href: '#coaches' },
+  { label: 'Жизнь клуба', href: '#club-life' },
+  { label: 'Спонсорам', href: '#sponsors' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Контакты', href: '#contacts' },
+];
 
 /**
  * 1. ОСНОВНАЯ ИНФОРМАЦИЯ О КЛУБЕ
@@ -462,3 +497,38 @@ export const FAQ_DATA: FAQItem[] = [
       "В период адаптации родители самых маленьких спортсменов могут наблюдать за первыми занятиями из зоны ожидания или на трибуне. Со временем мы рекомендуем давать ребёнку самостоятельность на поле, чтобы он учился взаимодействовать с тренером и партнёрами по команде без отвлечения.",
   },
 ];
+
+/**
+ * БЛОК ДЛЯ СПОНСОРОВ И ДЕЛОВЫХ ПАРТНЁРОВ КЛУБА
+ */
+export const SPONSORSHIP_INFO: SponsorshipInfo = {
+  badge: "Партнёрство и спонсорство",
+  title: "РАЗВИВАЙТЕ СВОЙ БРЕНД ВМЕСТЕ С ДСК «АВТОДОР»",
+  description:
+    "Команды нашего клуба регулярно выступают на региональных, федеральных, всероссийских и международных турнирах. Становясь партнёром ДСК «Автодор», ваша компания получает постоянное медийное присутствие на крупных спортивных аренах в разных городах и регионах, а также прямую ассоциацию с развитием детского спорта.",
+  benefits: [
+    {
+      id: "geography",
+      title: "География и охват",
+      description:
+        "Участие команд в региональных, федеральных, всероссийских и международных соревнованиях с широкой зрительской аудиторией и прямыми трансляциями.",
+      iconName: "globe",
+    },
+    {
+      id: "branding",
+      title: "Брендирование экипировки",
+      description:
+        "Нанесение логотипа вашей компании на игровую и парадную форму футболистов клуба.",
+      iconName: "shirt",
+    },
+    {
+      id: "media",
+      title: "Медиа и ресурсы клуба",
+      description:
+        "Регулярные упоминания и интеграция бренда на официальном сайте, в соцсетях клуба (ВКонтакте, Telegram, Instagram), а также в фото- и видеоотчётах с выездных турниров.",
+      iconName: "media",
+    },
+  ],
+  ctaText: "Обсудить сотрудничество",
+  ctaTargetId: "contacts",
+};

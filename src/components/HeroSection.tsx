@@ -58,12 +58,12 @@ export const HeroSection: React.FC = () => {
               {CLUB_INFO.heroDescription}
             </p>
 
-            {/* Primary & Secondary Action CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+            {/* Primary, Secondary & Sponsor Action CTAs */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-10">
               <button
                 type="button"
                 onClick={() => scrollTo('teams')}
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-xs sm:text-sm font-bold tracking-widest uppercase text-white bg-[#FF5A1F] hover:bg-[#E64C12] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#FF5A1F]/20 cursor-pointer"
+                className="group inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold tracking-widest uppercase text-white bg-[#FF5A1F] hover:bg-[#E64C12] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#FF5A1F]/20 cursor-pointer whitespace-nowrap"
               >
                 <span>НАШИ КОМАНДЫ</span>
                 <ChevronRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -72,9 +72,17 @@ export const HeroSection: React.FC = () => {
               <button
                 type="button"
                 onClick={() => scrollTo('contacts')}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 text-xs sm:text-sm font-bold tracking-widest uppercase text-white border border-[#262A30] hover:border-neutral-400 bg-[#151719]/80 hover:bg-[#1B1E22] active:scale-[0.98] transition-all duration-200 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold tracking-widest uppercase text-white border border-[#262A30] hover:border-neutral-400 bg-[#151719]/80 hover:bg-[#1B1E22] active:scale-[0.98] transition-all duration-200 cursor-pointer whitespace-nowrap"
               >
                 <span>КОНТАКТЫ</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollTo('sponsors')}
+                className="group inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-bold tracking-widest uppercase text-neutral-300 hover:text-white border border-[#262A30] hover:border-[#FF5A1F]/70 bg-[#151719]/50 hover:bg-[#1B1E22] active:scale-[0.98] transition-all duration-200 cursor-pointer whitespace-nowrap"
+              >
+                <span>СТАТЬ СПОНСОРОМ</span>
               </button>
             </div>
 

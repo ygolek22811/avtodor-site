@@ -11,6 +11,7 @@ import { PhilosophySection } from './components/PhilosophySection';
 import { TeamsSection } from './components/TeamsSection';
 import { CoachesSection } from './components/CoachesSection';
 import { ClubLifeSection } from './components/ClubLifeSection';
+import { SponsorshipSection } from './components/SponsorshipSection';
 import { FAQSection } from './components/FAQSection';
 import { ContactsSection } from './components/ContactsSection';
 import { Footer } from './components/Footer';
@@ -47,19 +48,22 @@ export default function App() {
         {/* Секция 3: Философия и подход */}
         <PhilosophySection />
 
-        {/* Секция 3: Команды клуба */}
+        {/* Секция 4: Команды клуба */}
         <TeamsSection onSelectTeamForInquiry={handleSelectTeam} />
 
-        {/* Секция 4: Тренерский состав */}
+        {/* Секция 5: Тренерский состав */}
         <CoachesSection />
 
-        {/* Секция 5: Жизнь клуба (фотоблок) */}
+        {/* Секция 6: Жизнь клуба (фотоблок) */}
         <ClubLifeSection />
 
-        {/* Секция 6: Часто задаваемые вопросы (FAQ) */}
+        {/* Секция 7: Партнёрство и спонсорство */}
+        <SponsorshipSection />
+
+        {/* Секция 8: Часто задаваемые вопросы (FAQ) */}
         <FAQSection />
 
-        {/* Секция 7: Контакты клуба */}
+        {/* Секция 9: Контакты клуба */}
         <ContactsSection
           selectedTeam={selectedTeamForInquiry}
           onClearSelectedTeam={handleClearSelectedTeam}

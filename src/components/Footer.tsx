@@ -1,21 +1,10 @@
-import React from 'react';
-import { CLUB_INFO, CLUB_CONTACTS } from '../config/clubData';
+import { CLUB_INFO, CLUB_CONTACTS, NAV_LINKS } from '../config/clubData';
 import { ArrowUp, Instagram, Send, Globe, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const navLinks = [
-    { label: 'Сотрудничество', href: '#cooperation' },
-    { label: 'Философия', href: '#philosophy' },
-    { label: 'Команды', href: '#teams' },
-    { label: 'Тренеры', href: '#coaches' },
-    { label: 'Жизнь клуба', href: '#club-life' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Контакты', href: '#contacts' },
-  ];
 
   return (
     <footer className="bg-[#07080A] border-t border-[#1E2124] text-neutral-400 py-16">
@@ -37,7 +26,7 @@ export const Footer: React.FC = () => {
 
           {/* Navigation Mirrors */}
           <nav className="flex flex-wrap items-center gap-6 text-xs uppercase tracking-wider font-semibold">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}

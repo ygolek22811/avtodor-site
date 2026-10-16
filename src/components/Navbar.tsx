@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { CLUB_INFO } from '../config/clubData';
+import { CLUB_INFO, NAV_LINKS } from '../config/clubData';
 
 export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,16 +13,6 @@ export const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navLinks = [
-    { label: 'Сотрудничество', href: '#cooperation' },
-    { label: 'Философия', href: '#philosophy' },
-    { label: 'Команды', href: '#teams' },
-    { label: 'Тренеры', href: '#coaches' },
-    { label: 'Жизнь клуба', href: '#club-life' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Контакты', href: '#contacts' },
-  ];
 
   const handleLinkClick = (href: string) => {
     setIsMobileMenuOpen(false);
@@ -43,7 +33,7 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Strictly 1-Row, 3-Zone Top Bar Contract */}
-          <div className="flex items-center justify-between gap-6 lg:gap-8">
+          <div className="flex items-center justify-between gap-4 lg:gap-6 xl:gap-8">
             {/* Zone 1: Single text element wordmark */}
             <a
               href="#"
@@ -55,8 +45,8 @@ export const Navbar: React.FC = () => {
             </a>
 
             {/* Zone 2: single-line clean nav links */}
-            <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-xs uppercase tracking-widest font-semibold text-neutral-300">
-              {navLinks.map((link) => (
+            <nav className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-7 text-[11px] xl:text-xs uppercase tracking-wider xl:tracking-widest font-semibold text-neutral-300">
+              {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
@@ -107,7 +97,7 @@ export const Navbar: React.FC = () => {
             <span className="text-[11px] uppercase tracking-widest text-[#FF5A1F] font-semibold">
               Навигация по клубу
             </span>
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
